@@ -38,3 +38,5 @@ export type TextProps = {
   size?: keyof typeof textSizes
   as?: ElementType
 }
+
+Text.displayName = 'Text'

@@ -1,5 +1,4 @@
-import { Avatar } from "@rcapeto-ui/react";
-import type { AvatarProps } from "@rcapeto-ui/react";
+import { Avatar, type AvatarProps } from "@rcapeto-ui/react";
 import type { StoryObj, Meta } from "@storybook/react";
 
 export default {

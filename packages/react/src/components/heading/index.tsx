@@ -33,3 +33,5 @@ export type HeadingProps = {
   size?: keyof typeof textSizes
   as?: ElementType
 }
+
+Heading.displayName = 'Heading'

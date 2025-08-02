@@ -92,3 +92,5 @@ export type ButtonProps = {
   disabled?: boolean
   onClick?: VoidFunction
 }
+
+Button.displayName = 'Button'
