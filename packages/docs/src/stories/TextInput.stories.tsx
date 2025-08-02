@@ -24,7 +24,8 @@ export const Primary: Story = {
 
 export const WithPrefix: Story = {
   args: {
-    prefix: 'cal.com/'
+    prefix: 'cal.com/',
+    placeholder: 'Your user name'
   }
 } 
 
