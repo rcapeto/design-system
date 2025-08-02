@@ -12,7 +12,7 @@
     "version-packages": "changeset version",
     "release": "turbo run build --filter=!@rcapeto-ui/docs && changeset publish",
     "prepare": "husky",
-    "test": "turbo run test --filter=!@rcapeto-ui/{eslint-config,ts-config,docs,tokens}"
+    "test": "turbo run test --filter=@rcapeto-ui/react"
 
   },
   "devDependencies": {
