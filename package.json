@@ -4,5 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {}
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.5"
+  },
+  "packageManager": "npm@10.9.2"
 }
