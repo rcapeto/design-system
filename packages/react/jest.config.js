@@ -13,7 +13,8 @@ module.exports = {
     '^.+\\.tsx?$': ['ts-jest'],
   },
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1', // Example alias: @/components maps to <rootDir>/src/components
+    '^~/(.*)$': '<rootDir>/src/$1',
+    '@rcapeto-ui/tokens': '<rootDir>/../tokens/dist/index.js',
   },
   testMatch: ['<rootDir>/src/components/**/**/*.spec.tsx'],
   displayName: 'React Tests',
