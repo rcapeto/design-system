@@ -6,10 +6,16 @@
   ],
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=@rcapeto-ui/docs && changeset publish"
   },
   "devDependencies": {
     "turbo": "^2.5.5"
   },
-  "packageManager": "npm@10.9.2"
+  "packageManager": "npm@10.9.2",
+  "dependencies": {
+    "@changesets/cli": "^2.29.5"
+  }
 }

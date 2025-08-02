@@ -1,7 +1,7 @@
 import type { ElementType, ReactNode } from 'react'
 import { styled } from '~/styles'
 
-const textSizes = {
+const sizes = {
   xxs: { fontSize: '$xxs' },
   xs: { fontSize: '$xs' },
   sm: { fontSize: '$sm' },
@@ -25,7 +25,7 @@ export const Text = styled('p', {
 
   variants: {
     size: {
-      ...textSizes,
+      ...sizes,
     },
   },
   defaultVariants: {
@@ -35,8 +35,8 @@ export const Text = styled('p', {
 
 export type TextProps = {
   children: ReactNode
-  size?: keyof typeof textSizes
+  size?: keyof typeof sizes
   as?: ElementType
 }
 
-Text.displayName = 'Text'
+Text.displayName = 'Typography'
