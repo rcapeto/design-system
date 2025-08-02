@@ -1,6 +1,7 @@
-import { Button, type ButtonProps } from '@rcapeto-ui/react'
-import type { StoryObj, Meta } from '@storybook/react'
+import { Button, type ButtonProps } from '@rcapeto-ui/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ArrowRight } from 'phosphor-react';
+import { fn } from 'storybook/test';
 
 export default {
   title: 'Form/Button',
@@ -29,11 +30,7 @@ export default {
         type: 'boolean',
       },
     },
-    onClick: { 
-      type: 'function',
-      description:'Callback when user click on button',
-      action: 'clicked',
-    },
+    onClick: fn()
   },
 } satisfies Meta<ButtonProps>;
 

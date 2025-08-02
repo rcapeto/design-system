@@ -1,5 +1,5 @@
-import { Box, Text, type BoxProps } from "@rcapeto-ui/react";
-import type { StoryObj, Meta } from "@storybook/react";
+import { Box, type BoxProps } from "@rcapeto-ui/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Surfaces/Box",
