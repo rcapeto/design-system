@@ -1,0 +1,28 @@
+{
+  "name": "@rcapeto-ui/react",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch",
+    "lint": "eslint src/**/*.ts* --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@rcapeto-ui/eslint-config": "*",
+    "@rcapeto-ui/tokens": "*",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "react": "^19.1.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
+  }
+}
