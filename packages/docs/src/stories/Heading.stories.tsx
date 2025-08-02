@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import { Heading, type HeadingProps } from "@rcapeto-ui/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Typography/Heading",

@@ -16,6 +16,9 @@
 - [ ] **build**: Mudança em arquivos de build ou em dependências externas.
 - [ ] **temp**: Commit temporário, que não deve ser incluído no CHANGELOG.
 
+## 🧪 Como foi testado?
+*Descreva como foi testado essas alterações.*
+
 ## 📸 Screenshots
 
 *Exclua essa sessão caso não seja relevante.*
@@ -23,3 +26,7 @@
 - Antes:
 
 - Depois:
+
+## 📝 Observações
+
+*Adicione observações necessárias para a realização desse code-review* 

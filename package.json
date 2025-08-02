@@ -7,11 +7,16 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "lint": "turbo run lint --filter=!@rcapeto-ui/{eslint-config,ts-config,docs}",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=!@rcapeto-ui/docs && changeset publish"
+    "release": "turbo run build --filter=!@rcapeto-ui/docs && changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
     "turbo": "^2.5.5"
   },
   "packageManager": "npm@10.9.2",

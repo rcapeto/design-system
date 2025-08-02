@@ -1,0 +1,9 @@
+echo 'Check for linting errors before commit'
+
+npm run lint || 
+(echo 'Fix eslint errors before commit' && exit 1)
+
+npm run build || 
+(echo 'Check your code, something is happening! Update before commit' && exit 1)
+
+echo 'Done! Its OK to commit.'
