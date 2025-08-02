@@ -17,6 +17,6 @@ export function InputComponent(
   )
 }
 
-const TextInput = forwardRef(InputComponent)
+export const TextInput = forwardRef(InputComponent)
 
 TextInput.displayName = 'TextInput'
