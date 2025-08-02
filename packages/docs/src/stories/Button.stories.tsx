@@ -1,35 +1,84 @@
-import { Button } from '@rcapeto-ui/react'
+import { Button, type ButtonProps } from '@rcapeto-ui/react'
 import type { StoryObj, Meta } from '@storybook/react'
+import { ArrowRight } from 'phosphor-react';
 
-const meta =  {
-  title: 'Button',
+export default {
+  title: 'Form/Button',
   component: Button,
+  args: {
+    children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
   argTypes: {
-    size: {
-      description: 'Tamanho do botão',
-      options: ['small', 'big'],
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
       },
-      default: 'small',
-      name: 'size',
     },
-  }
-} satisfies Meta<typeof Button>
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    onClick: { 
+      type: 'function',
+      description:'Callback when user click on button',
+      action: 'clicked',
+    },
+  },
+} satisfies Meta<ButtonProps>;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<ButtonProps>
 
 export const Primary: Story = {
-  args: {
-    children: 'Enviar',
-  },
+ 
 } 
 
 export const Secondary: Story = {
   args: {
-    children: 'Enviar',
-    size: 'big'
+    children: 'Create New',
+    variant: 'secondary',
   }
 } 
 
-export default meta
+export const Tertiary: Story = {
+  args: {
+    children: 'Cancel',
+    variant: 'tertiary',
+  }
+} 
+
+export const Small: Story = {
+  args: {
+    size: 'sm'
+  }
+} 
+
+export const Disabled: Story = {
+  args: {
+    disabled: true
+  }
+} 
+
+export const WithIcon: StoryObj<ButtonProps> = {
+  args: {
+    children: (
+      <>
+        Próximo passo
+        <ArrowRight weight="bold" />
+      </>
+    ),
+  },
+}
+
+
+

@@ -1,4 +1,10 @@
 {
   "extends": ["@rcapeto-ui/ts-config/react.json"],
-  "include": ["src"]
+  "include": ["src"],
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "baseUrl": ""
+  }
 }
