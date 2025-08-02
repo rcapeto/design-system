@@ -14,7 +14,6 @@ module.exports = {
   },
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
-    '@rcapeto-ui/tokens': '<rootDir>/../tokens/dist/index.js',
   },
   resolver: null,
   testMatch: ['<rootDir>/src/components/**/**/*.spec.tsx'],

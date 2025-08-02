@@ -22,10 +22,8 @@ jobs:
       - run: npm install
       - run: npm ci
 
-      - name: Check Code Tests
-        run: npm run test
-
       - name: Check Project Build
         run: npm run build
 
-   
+      - name: Check Code Tests
+        run: npm run test
