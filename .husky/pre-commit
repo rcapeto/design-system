@@ -5,19 +5,19 @@ npm run lint ||
 
 echo 'No lint errors :)'
 
-echo 'Lets test your code'
-
-npm run test || 
-(echo 'Check your tests! Update before commit' && exit 1)
-
-echo 'Very good! All tests passed :)'
-
 echo 'Starting the project build'
 
 npm run build || 
 (echo 'Check your code, something is happening! Update before commit' && exit 1)
 
 echo 'Project Build successfully :)!'
+
+echo 'Lets test your code'
+
+npm run test || 
+(echo 'Check your tests! Update before commit' && exit 1)
+
+echo 'Very good! All tests passed :)'
 
 
 echo 'Done! Its OK to commit.'
