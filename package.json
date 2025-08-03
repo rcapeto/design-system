@@ -11,7 +11,9 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=!@rcapeto-ui/docs && changeset publish",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "turbo run test --filter=@rcapeto-ui/react"
+
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

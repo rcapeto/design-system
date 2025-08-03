@@ -1,0 +1,29 @@
+name: Check Pull Request
+
+on: 
+ pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-pr:
+    name: Check Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - run: npm install
+      - run: npm ci
+
+      - name: Check Project Build
+        run: npm run build
+
+      - name: Check Code Tests
+        run: npm run test
