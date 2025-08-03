@@ -28,22 +28,6 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - run: npm ci
-
-      - name: Run changeset version
-        run: npm run version-packages
-
-      - name: Commit and Create Pull Request
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b release-changeset-${{ github.run_id }}
-          git add .
-          git diff --staged --quiet || git commit -m "chore(release): version bump and changelog"
-          git push origin release-changeset-${{ github.run_id }}
-          gh pr create --title "chore(release): version bump and changelog" --body "Automated release PR" --base main --head release-changeset-${{ github.run_id }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish to npm
         id: changesets
         uses: changesets/action@v1

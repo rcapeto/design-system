@@ -1,5 +1,11 @@
 # @rcapeto-ui/react
 
+## 2.3.0
+
+### Minor Changes
+
+- 82415df: [Button] - create unit tests
+
 ## 2.2.0
 
 ### Minor Changes
