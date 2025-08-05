@@ -29,4 +29,6 @@ export function Alert({
   )
 }
 
+Alert.displayName = 'Alert'
+
 export * from './types'
