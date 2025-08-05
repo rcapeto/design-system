@@ -1,9 +1,13 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render } from '@testing-library/react'
+import { cleanup, fireEvent, render } from '@testing-library/react'
 import { Button } from '~/components/button'
 import type { ColorSchema } from '~/types'
 
 describe('Button', () => {
+  beforeEach(() => {
+    cleanup()
+  })
+
   it('should find children by text', async () => {
     const buttonText = 'any-text'
 
@@ -19,22 +23,22 @@ describe('Button', () => {
   })
 
   it('should find children by test ID', async () => {
-    const testId = 'any-test-id'
+    const testID = 'any-test-id'
 
     const { findByTestId } = render(
       <Button>
-        <p data-testid={testId}>Example</p>
+        <p data-testid={testID}>Example</p>
       </Button>,
     )
 
-    const element = await findByTestId(testId)
+    const element = await findByTestId(testID)
 
     expect(element).toBeInTheDocument()
   })
 
   it('should be able to be pressed', () => {
     const handleClick = jest.fn()
-    const testID = 'testID'
+    const testID = 'any-test-id'
 
     const { getByTestId } = render(
       <Button onClick={handleClick} data-testid={testID}>
@@ -48,7 +52,7 @@ describe('Button', () => {
   })
 
   it('should set data-color-schema when has prop', async () => {
-    const testID = 'colorSchemaBtn'
+    const testID = 'any-test-id'
     const colorSchema: ColorSchema = 'info'
 
     const { getByTestId } = render(
@@ -58,8 +62,6 @@ describe('Button', () => {
     )
 
     const element = getByTestId(testID)
-
-    console.log('@@ element', element)
 
     expect(element).toHaveAttribute('data-color-schema', colorSchema)
   })
