@@ -1,7 +1,7 @@
-import type { ElementType, ReactNode } from 'react'
 import { styled } from '~/styles'
+import type { ButtonProps } from './types'
 
-export const Button = styled('button', {
+const BaseButton = styled('button', {
   all: 'unset',
   borderRadius: '$sm',
   fontSize: '$sm',
@@ -16,6 +16,7 @@ export const Button = styled('button', {
   gap: '$2',
   cursor: 'pointer',
   padding: '0 $4',
+  border: '2px solid transparent',
 
   svg: {
     width: '$4',
@@ -27,17 +28,45 @@ export const Button = styled('button', {
   },
 
   '&:focus': {
-    boxShadow: '0 0 0 2px $colors$gray100',
+    // boxShadow: '0 0 0 2px $colors$gray100',
+    borderColor: '$gray100',
   },
 
   variants: {
     variant: {
       primary: {
         color: '$white',
-        background: '$ignite500',
 
-        '&:not(:disabled):hover': {
-          background: '$ignite300',
+        '&[data-color-schema="success"]': {
+          backgroundColor: '$ignite500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$ignite300',
+          },
+        },
+
+        '&[data-color-schema="danger"]': {
+          backgroundColor: '$red500',
+
+          '&:not(:disabled):hover': {
+            background: '$red400',
+          },
+        },
+
+        '&[data-color-schema="info"]': {
+          backgroundColor: '$primary500',
+
+          '&:not(:disabled):hover': {
+            background: '$primary400',
+          },
+        },
+
+        '&[data-color-schema="warning"]': {
+          backgroundColor: '$yellow500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$yellow400',
+          },
         },
 
         '&:disabled': {
@@ -46,12 +75,46 @@ export const Button = styled('button', {
       },
 
       secondary: {
-        color: '$ignite300',
-        border: '2px solid $ignite500',
+        border: '2px solid transparent',
 
-        '&:not(:disabled):hover': {
-          background: '$ignite500',
-          color: '$white',
+        '&[data-color-schema="success"]': {
+          color: '$ignite300',
+          borderColor: '$ignite500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$ignite500',
+            color: '$white',
+          },
+        },
+
+        '&[data-color-schema="danger"]': {
+          color: '$red500',
+          borderColor: '$red500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$red500',
+            color: '$white',
+          },
+        },
+
+        '&[data-color-schema="info"]': {
+          color: '$primary500',
+          borderColor: '$primary500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$primary500',
+            color: '$white',
+          },
+        },
+
+        '&[data-color-schema="warning"]': {
+          color: '$yellow500',
+          borderColor: '$yellow500',
+
+          '&:not(:disabled):hover': {
+            backgroundColor: '$yellow500',
+            color: '$white',
+          },
         },
 
         '&:disabled': {
@@ -89,16 +152,10 @@ export const Button = styled('button', {
   },
 })
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
-export type ButtonSize = 'md' | 'sm'
-
-export type ButtonProps = {
-  children: ReactNode
-  as?: ElementType
-  size?: ButtonSize
-  variant?: ButtonVariant
-  disabled?: boolean
-  onClick?: VoidFunction
+export function Button({ colorSchema, ...props }: ButtonProps) {
+  return <BaseButton {...props} data-color-schema={colorSchema} />
 }
+
+export * from './types'
 
 Button.displayName = 'Button'
