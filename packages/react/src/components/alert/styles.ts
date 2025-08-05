@@ -45,6 +45,12 @@ export const AlertContainer = styled('div', {
         borderColor: '$yellow300',
         color: '$yellow500',
       },
+
+      neutral: {
+        backgroundColor: '$gray100',
+        borderColor: '$gray300',
+        color: '$gray500',
+      },
     },
   },
 

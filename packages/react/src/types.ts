@@ -1,1 +1,1 @@
-export type ColorSchema = 'info' | 'danger' | 'warning' | 'success'
+export type ColorSchema = 'info' | 'danger' | 'warning' | 'success' | 'neutral'

@@ -11,7 +11,7 @@ export function Alert({
   buttonText,
 }: AlertProps) {
   return (
-    <AlertContainer colorSchema={colorSchema}>
+    <AlertContainer colorSchema={colorSchema} data-color-schema={colorSchema}>
       <LeftContent>
         <IconContainer>
           <Info />

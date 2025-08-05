@@ -1,4 +1,5 @@
 import { styled } from '~/styles'
+import { colorsVariations } from './color-variations'
 import type { ButtonProps } from './types'
 
 const BaseButton = styled('button', {
@@ -37,36 +38,10 @@ const BaseButton = styled('button', {
       primary: {
         color: '$white',
 
-        '&[data-color-schema="success"]': {
-          backgroundColor: '$ignite500',
+        backgroundColor: 'var(--bg-color)',
 
-          '&:not(:disabled):hover': {
-            backgroundColor: '$ignite300',
-          },
-        },
-
-        '&[data-color-schema="danger"]': {
-          backgroundColor: '$red500',
-
-          '&:not(:disabled):hover': {
-            background: '$red400',
-          },
-        },
-
-        '&[data-color-schema="info"]': {
-          backgroundColor: '$primary500',
-
-          '&:not(:disabled):hover': {
-            background: '$primary400',
-          },
-        },
-
-        '&[data-color-schema="warning"]': {
-          backgroundColor: '$yellow500',
-
-          '&:not(:disabled):hover': {
-            backgroundColor: '$yellow400',
-          },
+        '&:not(:disabled):hover': {
+          backgroundColor: 'var(--hover-bg-color)',
         },
 
         '&:disabled': {
@@ -77,44 +52,12 @@ const BaseButton = styled('button', {
       secondary: {
         border: '2px solid transparent',
 
-        '&[data-color-schema="success"]': {
-          color: '$ignite300',
-          borderColor: '$ignite500',
+        color: 'var(--text-color)',
+        borderColor: 'var(--border-color)',
 
-          '&:not(:disabled):hover': {
-            backgroundColor: '$ignite500',
-            color: '$white',
-          },
-        },
-
-        '&[data-color-schema="danger"]': {
-          color: '$red500',
-          borderColor: '$red500',
-
-          '&:not(:disabled):hover': {
-            backgroundColor: '$red500',
-            color: '$white',
-          },
-        },
-
-        '&[data-color-schema="info"]': {
-          color: '$primary500',
-          borderColor: '$primary500',
-
-          '&:not(:disabled):hover': {
-            backgroundColor: '$primary500',
-            color: '$white',
-          },
-        },
-
-        '&[data-color-schema="warning"]': {
-          color: '$yellow500',
-          borderColor: '$yellow500',
-
-          '&:not(:disabled):hover': {
-            backgroundColor: '$yellow500',
-            color: '$white',
-          },
+        '&:not(:disabled):hover': {
+          backgroundColor: 'var(--bg-color)',
+          color: '$white',
         },
 
         '&:disabled': {
@@ -152,8 +95,24 @@ const BaseButton = styled('button', {
   },
 })
 
-export function Button({ colorSchema, ...props }: ButtonProps) {
-  return <BaseButton {...props} data-color-schema={colorSchema} />
+export function Button({ colorSchema = 'success', ...props }: ButtonProps) {
+  const {
+    primary: { bgColor, hoverBgColor },
+    secondary: { borderColor, textColor },
+  } = colorsVariations[colorSchema]
+
+  return (
+    <BaseButton
+      {...props}
+      data-color-schema={colorSchema}
+      css={{
+        '--bg-color': bgColor,
+        '--hover-bg-color': hoverBgColor,
+        '--text-color': textColor,
+        '--border-color': borderColor,
+      }}
+    />
+  )
 }
 
 export * from './types'
