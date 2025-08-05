@@ -23,7 +23,7 @@ export default {
 
 type Story = StoryObj<AlertProps>;
 
-export const Primary: Story = {
+export const Info: Story = {
   args: {
     colorSchema: 'info'
   }
