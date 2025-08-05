@@ -11,7 +11,7 @@ export default {
     variant: "primary",
     size: "md",
     disabled: false,
-    colorSchema: 'success'
+    colorSchema: "success",
   },
   argTypes: {
     variant: {
@@ -33,7 +33,7 @@ export default {
     },
     onClick: fn(),
     colorSchema: {
-      options: ["info", "danger", "warning", "success"],
+      options: ["info", "danger", "warning", "success", "neutral"],
       control: {
         type: "select",
       },
@@ -97,5 +97,12 @@ export const Danger: Story = {
 export const Warning: Story = {
   args: {
     colorSchema: "warning",
+  },
+};
+
+
+export const Neutral: Story = {
+  args: {
+    colorSchema: "neutral",
   },
 };

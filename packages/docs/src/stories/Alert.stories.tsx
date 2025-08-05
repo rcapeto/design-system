@@ -12,7 +12,7 @@ export default {
   },
    argTypes: {
     colorSchema: {
-      options: ["info", "danger", "warning", "success"],
+      options: ["info", "danger", "warning", "success", "neutral"],
       control: {
         type: "select",
       },
@@ -47,5 +47,8 @@ export const Danger: Story = {
   }
 };
 
-
-
+export const Neutral: Story = {
+   args: {
+    colorSchema: 'neutral'
+  }
+};
