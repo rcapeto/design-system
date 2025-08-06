@@ -1,5 +1,11 @@
 # @rcapeto-ui/tokens
 
+## 1.1.0
+
+### Minor Changes
+
+- 6064e0f: Add new colors
+
 ## 1.0.2
 
 ### Patch Changes
