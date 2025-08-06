@@ -1,0 +1,3 @@
+import{j as t}from"./index-Cqzd2t7n.js";import{useMDXComponents as r}from"./index-i0lujHYx.js";import{M as i}from"./blocks-Bb9x-Lrr.js";import"./iframe--iHokyYP.js";import"./preload-helper-D9Z9MdNV.js";import"./index-mn8C2lCD.js";import"./index--v1I49XY.js";function e(n){const o={h1:"h1",p:"p",...r(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{title:"Home"}),`
+`,t.jsx(o.h1,{id:"rcapeto-ui",children:"rcapeto UI"}),`
+`,t.jsx(o.p,{children:"Design System do Capeto."})]})}function d(n={}){const{wrapper:o}={...r(),...n.components};return o?t.jsx(o,{...n,children:t.jsx(e,{...n})}):e(n)}export{d as default};
