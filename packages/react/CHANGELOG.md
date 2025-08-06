@@ -1,5 +1,14 @@
 # @rcapeto-ui/react
 
+## 3.0.0
+
+### Major Changes
+
+- 90d7fe0: (Button): Add new prop `colorSchema` to add new colors variant
+  (Alert): Add new Alert component
+  (Badge): Add new Badge component
+  (Snackbar): Add new Snackbar component
+
 ## 2.3.0
 
 ### Minor Changes

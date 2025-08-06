@@ -1,7 +1,8 @@
-import type { ElementType, ReactNode } from 'react'
 import { styled } from '~/styles'
+import { colorsVariations } from './color-variations'
+import type { ButtonProps } from './types'
 
-export const Button = styled('button', {
+const BaseButton = styled('button', {
   all: 'unset',
   borderRadius: '$sm',
   fontSize: '$sm',
@@ -16,6 +17,7 @@ export const Button = styled('button', {
   gap: '$2',
   cursor: 'pointer',
   padding: '0 $4',
+  border: '2px solid transparent',
 
   svg: {
     width: '$4',
@@ -27,17 +29,19 @@ export const Button = styled('button', {
   },
 
   '&:focus': {
-    boxShadow: '0 0 0 2px $colors$gray100',
+    // boxShadow: '0 0 0 2px $colors$gray100',
+    borderColor: '$gray100',
   },
 
   variants: {
     variant: {
       primary: {
         color: '$white',
-        background: '$ignite500',
+
+        backgroundColor: 'var(--bg-color)',
 
         '&:not(:disabled):hover': {
-          background: '$ignite300',
+          backgroundColor: 'var(--hover-bg-color)',
         },
 
         '&:disabled': {
@@ -46,11 +50,13 @@ export const Button = styled('button', {
       },
 
       secondary: {
-        color: '$ignite300',
-        border: '2px solid $ignite500',
+        border: '2px solid transparent',
+
+        color: 'var(--text-color)',
+        borderColor: 'var(--border-color)',
 
         '&:not(:disabled):hover': {
-          background: '$ignite500',
+          backgroundColor: 'var(--bg-color)',
           color: '$white',
         },
 
@@ -89,16 +95,26 @@ export const Button = styled('button', {
   },
 })
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
-export type ButtonSize = 'md' | 'sm'
+export function Button({ colorSchema = 'success', ...props }: ButtonProps) {
+  const {
+    primary: { bgColor, hoverBgColor },
+    secondary: { borderColor, textColor },
+  } = colorsVariations[colorSchema]
 
-export type ButtonProps = {
-  children: ReactNode
-  as?: ElementType
-  size?: ButtonSize
-  variant?: ButtonVariant
-  disabled?: boolean
-  onClick?: VoidFunction
+  return (
+    <BaseButton
+      {...props}
+      data-color-schema={colorSchema}
+      css={{
+        '--bg-color': bgColor,
+        '--hover-bg-color': hoverBgColor,
+        '--text-color': textColor,
+        '--border-color': borderColor,
+      }}
+    />
+  )
 }
+
+export * from './types'
 
 Button.displayName = 'Button'
