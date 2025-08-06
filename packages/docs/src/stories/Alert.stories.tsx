@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "storybook/internal/test";
 
 export default {
-  title: "Display/Alert",
+  title: "Feedback/Alert",
   component: Alert,
   args: {
    buttonText:  'Button',
