@@ -1,4 +1,5 @@
 import { colors } from "@rcapeto-ui/tokens";
+import { getContrast } from 'polished';
 
 export function ColorsGrid() {
   return Object.entries(colors).map(([key, color]) => (
@@ -8,7 +9,7 @@ export function ColorsGrid() {
           display: "flex",
           justifyContent: "space-between",
           fontFamily: "monospace",
-          color: key === "white" ? "#000" : "#fff",
+         color: getContrast(color, '#FFF') < 3.5 ? '#000' : '#FFF',
         }}
       >
         <span>${key}</span>
