@@ -22,15 +22,9 @@ describe('Alert', () => {
     const buttonText = 'any-text'
     const text = 'any-alert-text'
     const handleClick = jest.fn()
-    const testID = 'alert'
 
     const { findByRole } = render(
-      <Alert
-        text={text}
-        buttonText={buttonText}
-        onClick={handleClick}
-        data-testid={testID}
-      />,
+      <Alert text={text} buttonText={buttonText} onClick={handleClick} />,
     )
 
     const button = await findByRole('button')
